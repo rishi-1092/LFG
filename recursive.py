@@ -1,14 +1,18 @@
 import sys
 num = int(input().strip())
 ans = 0
+recursions = 0
 
 def hailstoneSum(N):
+    global recursions
+    recursions+=1
     global ans
+    global num
     # print("N " + str(N))
     # print("ans " + str(ans))
     if N == 1 :
         ans += 1
-        print(ans)
+        print(f"Hailstone Series Sum starting from {num} = {ans} \After {recursions} recursions!")
         sys.exit(0)
         # return ans
     else :
@@ -19,5 +23,3 @@ def hailstoneSum(N):
             hailstoneSum(N = ((3*N)+1))
 
 hailstoneSum(N = num)
-# finalAns = hailstoneSum(N = num)
-# print(finalAns)

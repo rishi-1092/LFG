@@ -2,8 +2,11 @@ import sys
 num = int(input().strip())
 ans = 0
 recursions = 0
+hailstone_seq = []
 
 def hailstoneSum(N):
+    global hailstone_seq
+    hailstone_seq.append(N)
     global recursions
     recursions+=1
     global ans
@@ -12,7 +15,8 @@ def hailstoneSum(N):
     # print("ans " + str(ans))
     if N == 1 :
         ans += 1
-        print(f"Hailstone Series Sum starting from {num} = {ans} \After {recursions} recursions!")
+        print(f"Hailstone Series Sum starting from {num} = {ans} \nAfter {recursions} recursions \
+        \nHailstone Sequence: {', '.join([str(i) for i in hailstone_seq])}")
         sys.exit(0)
         # return ans
     else :
